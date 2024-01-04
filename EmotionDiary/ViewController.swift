@@ -4,13 +4,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var emotions: [UILabel]!
-    
-    let buttonCount: [Int] = []
-
     let imageList: [String] = ["slime1", "slime2", "slime3", "slime4", "slime5", "slime6", "slime7", "slime8", "slime9"]
     
     let emotionList: [String] = ["행복해", "사랑해", "좋아해", "당황해", "속상해", "우울해", "심심해", "행복해", "행복해"]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationItem()
@@ -21,30 +18,31 @@ class ViewController: UIViewController {
     func didEmotionButtonClicked(button: UIButton) {
         for buttonItem in 0...buttons.count - 1 {
             if buttons[buttonItem] == button {
+                let buttoClicked = UserDefaults.standard.integer(forKey: "\(buttonItem)")
+
+                let buttonCount = buttoClicked + 1
                 
-                emotions[buttonItem].text = ("\(emotionList[buttonItem]) \(button.tag)")
+                UserDefaults.standard.set(buttonCount, forKey: "\(buttonItem)")
+                
+                emotions[buttonItem].text = ("\(emotionList[buttonItem]) \(UserDefaults.standard.integer(forKey: "\(buttonItem)"))")
+                print(emotions[buttonItem])
             }
+            print(UserDefaults.standard.integer(forKey: "\(buttonItem)"))
         }
     }
-    
 
-    
-    
     func emotionLabelDesign() {
         for count in 0...emotions.count - 1 {
-            emotions[count].text = "\(emotionList[count]) \(buttons[count].tag)"
-            
+            emotions[count].text = ("\(emotionList[count]) \(UserDefaults.standard.integer(forKey: "\(count)"))")
             emotions[count].textColor = .black
-            emotions[count].font = .boldSystemFont(ofSize: 15)
-            
+            emotions[count].font = .boldSystemFont(ofSize: 13)
             emotions[count].textAlignment = .center
-
         }
     }
     
     func buttonDesign() {
         for count in 0...buttons.count - 1 {
-            buttons[count].setTitle("", for: .normal)
+            buttons[count].setTitle("\(UserDefaults.standard.integer(forKey: "count"))", for: .normal)
             buttons[count].setImage(UIImage(named: imageList[count]), for: .normal)
             buttons[count].imageView?.contentMode = .scaleAspectFit
         }
@@ -52,7 +50,6 @@ class ViewController: UIViewController {
     
     func setNavigationItem() {
         navigationItem.title = "감정다이어리"
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.triangle"), style: .plain, target: self, action: #selector(rightbarButtonClikced))
         navigationItem.leftBarButtonItem?.tintColor = .black
     }
@@ -73,8 +70,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func emotionButtonClicked(_ sender: UIButton) {
-            
-        sender.tag += 1
         didEmotionButtonClicked(button: sender)
         /*
         // 랜덤 출력

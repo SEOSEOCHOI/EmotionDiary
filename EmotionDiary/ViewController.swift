@@ -1,5 +1,3 @@
-// UserDe
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -7,7 +5,8 @@ class ViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var emotions: [UILabel]!
     
-    
+    let buttonCount: [Int] = []
+
     let imageList: [String] = ["slime1", "slime2", "slime3", "slime4", "slime5", "slime6", "slime7", "slime8", "slime9"]
     
     let emotionList: [String] = ["행복해", "사랑해", "좋아해", "당황해", "속상해", "우울해", "심심해", "행복해", "행복해"]
@@ -28,14 +27,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func didEmotionButtonRandomClicked(button: UIButton) {
-        for buttonItem in 0...buttons.count - 1 {
-            if buttons[buttonItem] == button {
-                
-                emotions[buttonItem].text = ("\(emotionList[buttonItem]) \(Int.random(in: 0...100))")
-            }
-        }
-    }
+
     
     
     func emotionLabelDesign() {
@@ -84,7 +76,19 @@ class ViewController: UIViewController {
             
         sender.tag += 1
         didEmotionButtonClicked(button: sender)
+        /*
         // 랜덤 출력
         didEmotionButtonRandomClicked(button: sender)
+         */
     }
 }
+/*
+ func didEmotionButtonRandomClicked(button: UIButton) {
+     for buttonItem in 0...buttons.count - 1 {
+         if buttons[buttonItem] == button {
+             
+             emotions[buttonItem].text = ("\(emotionList[buttonItem]) \(Int.random(in: 0...100))")
+         }
+     }
+ }
+ */

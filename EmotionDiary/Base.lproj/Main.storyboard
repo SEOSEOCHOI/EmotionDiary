@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Save Count View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EmotionDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SaveCountViewController" customModule="EmotionDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,12 +25,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0n-Om-KrD">
                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="104.33333333333333"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6R-cJ-Chh">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6R-cJ-Chh">
                                                         <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
-                                                            <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="usf-cZ-8Ra"/>
+                                                            <action selector="OneButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OZv-DP-a1G"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-em-Ph8">
@@ -62,7 +62,7 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVL-Hv-Wb5"/>
+                                                                    <action selector="twoButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TnV-ra-47V"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZt-aH-V3I">
@@ -95,9 +95,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7f-ji-bDn"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ta-3u-kQV">
                                                                 <rect key="frame" x="0.0" y="84.000000000000028" width="104.33333333333333" height="20.333333333333329"/>
@@ -134,9 +131,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xgj-bg-CeP"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CW-fQ-75U">
                                                                 <rect key="frame" x="0.0" y="84" width="104.33333333333333" height="20.333333333333329"/>
@@ -168,9 +162,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuU-zx-HxC"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMM-ZF-qYP">
                                                                 <rect key="frame" x="0.0" y="84" width="104.33333333333333" height="20.333333333333329"/>
@@ -202,9 +193,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lTW-xD-QA4"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmR-zm-Yom">
                                                                 <rect key="frame" x="0.0" y="84" width="104.33333333333333" height="20.333333333333329"/>
@@ -241,9 +229,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdH-t1-hEX"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2g-wS-DEn">
                                                                 <rect key="frame" x="0.0" y="84.000000000000057" width="104.33333333333333" height="20.333333333333329"/>
@@ -275,9 +260,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHF-6g-wqz"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9R-Gz-mfD">
                                                                 <rect key="frame" x="0.0" y="84.000000000000057" width="104.33333333333333" height="20.333333333333329"/>
@@ -309,9 +291,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="84"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <connections>
-                                                                    <action selector="emotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nkl-qr-MRO"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHa-Ej-VWi">
                                                                 <rect key="frame" x="0.0" y="84.000000000000057" width="104.33333333333333" height="20.333333333333329"/>
@@ -351,15 +330,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="CiQ-vr-hcZ"/>
                     <connections>
-                        <outletCollection property="buttons" destination="V6R-cJ-Chh" collectionClass="NSMutableArray" id="0vd-V8-shF"/>
-                        <outletCollection property="buttons" destination="VXN-a5-A6I" collectionClass="NSMutableArray" id="hsm-fI-No8"/>
-                        <outletCollection property="buttons" destination="csJ-SB-ugG" collectionClass="NSMutableArray" id="bR9-oi-FCL"/>
-                        <outletCollection property="buttons" destination="Bh6-4Y-QIp" collectionClass="NSMutableArray" id="wHs-7w-HPL"/>
-                        <outletCollection property="buttons" destination="3Uy-x3-YOQ" collectionClass="NSMutableArray" id="zVO-9T-le6"/>
-                        <outletCollection property="buttons" destination="r4o-Vk-bNx" collectionClass="NSMutableArray" id="7uH-iF-I5z"/>
-                        <outletCollection property="buttons" destination="NO2-WG-xKX" collectionClass="NSMutableArray" id="RMV-nw-SbM"/>
-                        <outletCollection property="buttons" destination="GnK-ds-yan" collectionClass="NSMutableArray" id="rZH-nL-gcC"/>
-                        <outletCollection property="buttons" destination="1sl-r2-RF6" collectionClass="NSMutableArray" id="UkZ-it-6lp"/>
+                        <outlet property="oneButton" destination="V6R-cJ-Chh" id="kxw-TA-MH7"/>
+                        <outlet property="twoButton" destination="VXN-a5-A6I" id="fmb-1v-Msg"/>
                         <outletCollection property="emotions" destination="kZ1-em-Ph8" collectionClass="NSMutableArray" id="wHI-Sj-7yL"/>
                         <outletCollection property="emotions" destination="XZt-aH-V3I" collectionClass="NSMutableArray" id="WSK-SW-rs9"/>
                         <outletCollection property="emotions" destination="3ta-3u-kQV" collectionClass="NSMutableArray" id="oUE-hS-Ql9"/>
